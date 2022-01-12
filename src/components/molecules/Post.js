@@ -1,5 +1,5 @@
 import React from "react";
-import { PostWrapper, TitlePost, CategoryPost, ArticlePost, AuthorWrapper, AuthorPost, DataPost, ButtonPost} from './Post.styled'
+import { PostWrapper, TitlePost, CategoryPost, ArticlePost, AuthorWrapper, AuthorPost, DataPost, ButtonPost} from './Post.styles'
 
 
 
