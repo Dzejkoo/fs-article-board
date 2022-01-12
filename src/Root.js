@@ -2,6 +2,7 @@ import { createGlobalStyle } from 'styled-components';
 import { PostBoard } from './components/organisms/PostBoard';
 import { theme } from './assets/styles/theme';
 import { ThemeProvider } from 'styled-components';
+import ArticleProvider from './Providers/ArticleProvider';
 
 const GlobalStyle = createGlobalStyle`
 
@@ -11,22 +12,18 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     font-family: 'Poppins', sans-serif;
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
   }
-`
+`;
 
 const Root = () => {
   return (
     <ThemeProvider theme={theme}>
-      <GlobalStyle />
-      <PostBoard />
+      <ArticleProvider>
+        <GlobalStyle />
+        <PostBoard />
+      </ArticleProvider>
     </ThemeProvider>
-  )
-}
+  );
+};
 
-export default Root
+export default Root;
