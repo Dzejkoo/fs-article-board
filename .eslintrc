@@ -1,0 +1,27 @@
+{
+  "extends": [
+    "react-app",
+    "plugin:prettier/recommended",
+    "prettier"
+  ], 
+  "plugins": [
+    "prettier"
+  ],
+  "rules": {
+    "prettier/prettier": [
+      "warn",
+      {
+        "singleQuote": true,
+        "prettier.tabWidth": 2,
+        "prettier.useTabs": true,
+        "endOfLine": "auto",
+        "printWidth": 180
+      }
+    ]
+  },
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true
+  }
+}
