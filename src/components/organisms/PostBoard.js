@@ -1,15 +1,16 @@
 import React, { useContext } from 'react';
-import { PostsWrapper } from './PostBoard.styles';
+import { PostsWrapper, Title } from './PostBoard.styles';
 import { Post } from '../molecules/Post';
 import { ArticleContext } from '../../Providers/ArticleProvider';
 
 export const PostBoard = () => {
-  const { article, DeleteArticle } = useContext(ArticleContext);
+  const { article, DeleteArticle, isLoading } = useContext(ArticleContext);
 
   return (
     <PostsWrapper>
+      <Title>{isLoading ? 'Loading...' : `Articles:`}</Title>
       {article.map((articleData) => (
-        <Post articleData={articleData} DeleteArticle={DeleteArticle} />
+        <Post isLoading={isLoading} articleData={articleData} DeleteArticle={DeleteArticle} />
       ))}
     </PostsWrapper>
   );
