@@ -22,21 +22,24 @@ const query = `
 
 const ArticleProvider = ({ children }) => {
   const [article, setArticle] = useState([]);
+  const [isLoading, setLoading] = useState([]);
 
   useEffect(() => {
     axios
       .post('https://graphql.datocms.com/', { query: query }, { headers: { authorization: `Bearer ${API_TOKEN}` } })
-      .then(({ data: { data } }) => setArticle(data.allArticles))
+      .then(({ data: { data } }) => {
+        setLoading(false);
+        setArticle(data.allArticles);
+      })
       .catch((err) => console.log(err));
   }, []);
 
   const DeleteArticle = (title) => {
     const filtredArticle = article.filter((article) => article.title !== title);
     setArticle(filtredArticle);
-    console.log(filtredArticle);
   };
 
-  return <ArticleContext.Provider value={{ DeleteArticle, article }}>{children}</ArticleContext.Provider>;
+  return <ArticleContext.Provider value={{ DeleteArticle, article, isLoading }}>{children}</ArticleContext.Provider>;
 };
 
 export default ArticleProvider;

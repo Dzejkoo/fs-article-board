@@ -5,7 +5,7 @@ export const PostWrapper = styled.div`
   background-color: ${({ theme }) => theme.colors.mediumGrey};
   padding: 25px;
   border-radius: 20px;
-  margin: 20px;
+  margin: 20px 20px 20px 50px;
   position: relative;
 `;
 

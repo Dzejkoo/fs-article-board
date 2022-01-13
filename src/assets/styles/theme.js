@@ -5,12 +5,12 @@ export const theme = {
     l: '17px',
     m: '14px',
     s: '12px',
-  }, 
+  },
   colors: {
-    darkGrey: '#a7a7a7', 
-    mediumGrey: '#cdcdcd', 
-    lightGrey: '#dadada', 
-    white: '#FFFFFF', 
-    yellow: '#ffef42;', 
-  }
-}
+    darkGrey: '#a7a7a7',
+    mediumGrey: '#cdcdcd',
+    lightGrey: '#dadada',
+    white: '#FFFFFF',
+    yellow: '#ffef42;',
+  },
+};
